@@ -46,7 +46,7 @@ export const connectWallet = async() => {
     }
 }
 
-export const swithToBaseSepolia = async (provider) => {
+export const switchToBaseSepolia = async (provider) => {
     try{
         if(!provider){
             throw new Error("No Provider Available");
@@ -64,7 +64,7 @@ export const swithToBaseSepolia = async (provider) => {
             params: [{chainId: `0x${targetChainId.toString(16)}`}]
         })
         return true;
-    }catch(error){
+    } catch(error){
         if(error.code === 4902){
             try{
                 const rpcUrl = import.meta.env.VITE_RPC_URL;
